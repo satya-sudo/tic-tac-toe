@@ -1,0 +1,22 @@
+curl -X POST http://localhost:8080/games
+{"gameId":"8cf3f938-a3bd-4916-a3e1-81bd56eade1d","status":"created"}
+
+curl -X POST http://localhost:8080/games/8cf3f938-a3bd-4916-a3e1-81bd56eade1d/join \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Satyam"}'
+
+  curl -X POST http://localhost:8080/games/8cf3f938-a3bd-4916-a3e1-81bd56eade1d/join \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Player2"}'
+
+  curl -X POST http://localhost:8080/games/8cf3f938-a3bd-4916-a3e1-81bd56eade1d/start
+
+  curl http://localhost:8080/games/8cf3f938-a3bd-4916-a3e1-81bd56eade1d
+
+  curl -X POST http://localhost:8080/games/8cf3f938-a3bd-4916-a3e1-81bd56eade1d/moves \
+  -H "Content-Type: application/json" \
+  -d '{
+    "playerId": "b10f25f0-960a-402c-958a-3827e03d23e2",
+    "x": 0,
+    "y": 0
+  }'
